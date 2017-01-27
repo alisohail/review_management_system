@@ -17,23 +17,24 @@ export class ReviewAddComponent implements OnInit {
     private flashMessagesService: FlashMessagesService) {}
 
   ngOnInit() {
-    
+
   }
 
   addReview(review: Review){
     //maybe return boolean to check if added successfully to db we show some kind of message?
     this.reviewService.addReview(review)
     .then(() => {
-      this.flashMessagesService.show('Your review has been added.', { cssClass: 'alert-success', timeout: 5000 });  
+      this.flashMessagesService.show('Your review has been send.', { cssClass: 'alert-success', timeout: 5000 });
     })
     .catch(error => {
-      this.flashMessagesService.show('An error occured.', { cssClass: 'alert-danger', timeout: 5000 });
+      this.flashMessagesService.show('Unable to submit review. Unknown error occured.', { cssClass: 'alert-danger', timeout: 5000 });
     });
   }
 
   onSubmit(form: NgForm){
-    console.log(this.newReview);
+    //not using form parameter for time being.
     //any form validation? custom messages for validaton etc... could directly call service but created different method for maintainance purpose.
     this.addReview(this.newReview);
+    form.reset();
   }
 }

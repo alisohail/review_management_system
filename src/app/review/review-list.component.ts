@@ -13,7 +13,7 @@ export class ReviewListComponent implements OnInit {
   public reviews: any[]; // Current page
   public currentPage: number = 1;
   public totalReviews: number = 0;
-  public itemsPerPage: number = 5;
+  public itemsPerPage: number = 5;  //total number to reviews you want to see on page.
 
   constructor(
     private reviewService: ReviewService,
