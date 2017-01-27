@@ -2,7 +2,9 @@
 
 ## Development server
 1. npm install
-2. ng serve for a dev server. 
+2. ng server. 
 
+Firebase database URL: 
+'https://reviewmanagementdb.firebaseio.com/'
 
-Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to `http://localhost:4200/`.
