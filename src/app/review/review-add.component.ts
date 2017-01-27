@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component} from '@angular/core';
 import { Review } from "./review";
 import { NgForm } from "@angular/forms";
 import { ReviewService } from "./review.service";
@@ -9,16 +9,12 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   templateUrl: './review-add.component.html',
   styles: []
 })
-export class ReviewAddComponent implements OnInit {
+export class ReviewAddComponent {
   newReview: Review = new Review();
   reviews:Review[] = [];  //list of all reviews
   constructor(
     private reviewService: ReviewService,
     private flashMessagesService: FlashMessagesService) {}
-
-  ngOnInit() {
-
-  }
 
   addReview(review: Review){
     //maybe return boolean to check if added successfully to db we show some kind of message?

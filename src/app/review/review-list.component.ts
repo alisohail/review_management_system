@@ -9,7 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styles: []
 })
 export class ReviewListComponent implements OnInit {
-  public allReviews: any[]; // Holds all reviews
+  public allReviews: any[];
   public reviews: any[]; // Current page
   public currentPage: number = 1;
   public totalReviews: number = 0;
@@ -38,7 +38,7 @@ export class ReviewListComponent implements OnInit {
   }
 
   sort(order: string) {
-    this.allReviews = this.reviewService.sortReviews(this.allReviews, order)
+    this.allReviews = this.reviewService.sortReviews(this.allReviews, order);
     this.changePage(1);
     this.currentPage = 1;
   }
