@@ -4,10 +4,10 @@ import {ReviewAddComponent} from "./review/review-add.component";
 
 
 const APP_ROUTES: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: ReviewListComponent},
+  {path: '', redirectTo: '/reviews', pathMatch: 'full'},
+  {path: 'reviews', component: ReviewListComponent},
   {path: 'add-review', component: ReviewAddComponent},
-
+  {path: '**', redirectTo: 'reviews', pathMatch:'full'}  //redirect unknown routes to /reviews
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
